@@ -58,13 +58,8 @@ public class KautotuKud implements Initializable {
     void ezabatuClick(ActionEvent event) {
         String zerbitzu = (String)comboZerbitzua.getValue();
         ZerbitzuKud.getInstance().ezabatuKUd(zerbitzu);
-        comboEguner();
+        comboZerbitzua.getItems().remove(comboZerbitzua.getValue());
     }
 
-    public void comboEguner(){
-        List<String> zerbiList = ZerbitzuKud.getInstance().lortuZerbitzuak();
-        ObservableList<String> zerb = FXCollections.observableArrayList(zerbiList);
-        comboZerbitzua.setItems(zerb);
-    }
 
 }
